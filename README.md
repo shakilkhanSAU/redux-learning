@@ -10,14 +10,14 @@ Create a context first
 `export const COUNTER_CONTEXT = createContext();`
 
 Wrap the entire app by this context with value and provider
-`<COUNTER_CONTEXT.Provider value={value}>
+```<COUNTER_CONTEXT.Provider value={value}>
       <div className="App">
         <Parent></Parent>
       </div>
-    </COUNTER_CONTEXT.Provider>`
+    </COUNTER_CONTEXT.Provider>```
 
 Use the context where necessary
-   ` const { setCount, count } = useContext(COUNTER_CONTEXT);`
+   ``` const { setCount, count } = useContext(COUNTER_CONTEXT);```
 
 No need to props drilling to the child component. 
 
@@ -28,7 +28,7 @@ useReducer is a hook, it take two parameter
 2. initialState
 Return state and dispatch function which have an action as object and it have action type must. Template is given below, 
 
-import React, { useContext, useReducer } from 'react';
+```import React, { useContext, useReducer } from 'react';
 import { COUNTER_CONTEXT } from '../App';
 
 
@@ -42,9 +42,9 @@ const Child = () => {
             return state - 1;
         }
     }
+```
 
-
-    const [state, dispatch] = useReducer(reducer, initialState)
+  ```  const [state, dispatch] = useReducer(reducer, initialState)
     return (
         <div style={{ background: 'yellow' }}>
             <h1>{state}</h1>
@@ -63,6 +63,6 @@ const Child = () => {
 };
 
 
-export default Child;
+export default Child;```
 
 
