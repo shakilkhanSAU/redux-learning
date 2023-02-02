@@ -2,30 +2,30 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Redux class note
+## Redux class note
 
-03 Global state management
+## Global state management
 React state normally local state, to use them globally we need to create a context in react. 
 Create a context first
-export const COUNTER_CONTEXT = createContext();
+`export const COUNTER_CONTEXT = createContext();`
 
 Wrap the entire app by this context with value and provider
-<COUNTER_CONTEXT.Provider value={value}>
+`<COUNTER_CONTEXT.Provider value={value}>
       <div className="App">
         <Parent></Parent>
       </div>
-    </COUNTER_CONTEXT.Provider>
+    </COUNTER_CONTEXT.Provider>`
 
 Use the context where necessary
-    const { setCount, count } = useContext(COUNTER_CONTEXT);
+   ` const { setCount, count } = useContext(COUNTER_CONTEXT);`
 
 No need to props drilling to the child component. 
 
 
-04 Problem with handling multiple states useReducer()
+## Problem with handling multiple states useReducer()
 useReducer is a hook, it take two parameter 
-Reduce function 
-initialState
+1. Reduce function 
+2. initialState
 Return state and dispatch function which have an action as object and it have action type must. Template is given below, 
 
 import React, { useContext, useReducer } from 'react';
